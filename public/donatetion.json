@@ -1,0 +1,92 @@
+[
+    {
+        "id": 1,
+        "title": "Winter Clothing Support - Dhaka",
+        "image": "https://images.unsplash.com/photo-1608889175123-8ee362201f81",
+        "description": "Providing warm clothes to underprivileged people in Dhaka city during winter.",
+        "status": "active",
+        "contactInfo": "+8801712345678",
+        "division": "Dhaka"
+    },
+    {
+        "id": 2,
+        "title": "Blanket Distribution Drive - Barishal",
+        "image": "https://images.unsplash.com/photo-1544025162-d76694265947",
+        "description": "Distributing blankets to cold-affected families in rural Barishal.",
+        "status": "active",
+        "contactInfo": "+8801812345678",
+        "division": "Barishal"
+    },
+    {
+        "id": 3,
+        "title": "Warm Clothes for Slum Areas - Chattogram",
+        "image": "https://images.unsplash.com/photo-1601924928376-3c5c9b8a8c5c",
+        "description": "Helping slum dwellers in Chattogram stay warm during winter.",
+        "status": "active",
+        "contactInfo": "+8801912345678",
+        "division": "Chattogram"
+    },
+    {
+        "id": 4,
+        "title": "Street People Winter Aid - Dhaka",
+        "image": "https://images.unsplash.com/photo-1581578731548-c64695cc6952",
+        "description": "Providing jackets and blankets to homeless people in Dhaka.",
+        "status": "completed",
+        "contactInfo": "+8801723456789",
+        "division": "Dhaka"
+    },
+    {
+        "id": 5,
+        "title": "Coastal Winter Relief - Barishal",
+        "image": "https://images.unsplash.com/photo-1573164713988-8665fc963095",
+        "description": "Supporting coastal communities in Barishal with winter essentials.",
+        "status": "active",
+        "contactInfo": "+8801823456789",
+        "division": "Barishal"
+    },
+    {
+        "id": 6,
+        "title": "Hill Tracts Winter Support - Chattogram",
+        "image": "https://images.unsplash.com/photo-1509099836639-18ba1795216d",
+        "description": "Delivering winter clothes to remote hill tracts in Chattogram.",
+        "status": "upcoming",
+        "contactInfo": "+8801923456789",
+        "division": "Chattogram"
+    },
+    {
+        "id": 7,
+        "title": "Orphanage Winter Donation - Dhaka",
+        "image": "https://images.unsplash.com/photo-1607746882042-944635dfe10e",
+        "description": "Providing winter clothing for children in orphanages in Dhaka.",
+        "status": "active",
+        "contactInfo": "+8801734567890",
+        "division": "Dhaka"
+    },
+    {
+        "id": 8,
+        "title": "Fishermen Winter Aid - Barishal",
+        "image": "https://images.unsplash.com/photo-1529156069898-49953e39b3ac",
+        "description": "Helping fishermen families in Barishal with warm clothing.",
+        "status": "completed",
+        "contactInfo": "+8801834567890",
+        "division": "Barishal"
+    },
+    {
+        "id": 9,
+        "title": "Garments Workers Support - Chattogram",
+        "image": "https://images.unsplash.com/photo-1492724441997-5dc865305da7",
+        "description": "Supporting low-income garment workers with winter essentials.",
+        "status": "active",
+        "contactInfo": "+8801934567890",
+        "division": "Chattogram"
+    },
+    {
+        "id": 10,
+        "title": "Night Shelter Winter Drive - Dhaka",
+        "image": "https://images.unsplash.com/photo-1519681393784-d120267933ba",
+        "description": "Providing blankets and warm food to night shelter residents.",
+        "status": "upcoming",
+        "contactInfo": "+8801745678901",
+        "division": "Dhaka"
+    }
+]
