@@ -32,7 +32,7 @@ const DonateField = () => {
                     <textarea className="textarea textarea-accent" placeholder="Additional notes"></textarea>
                 </div>
                 <div className="form-control mt-6">
-                    <button type="submit" className="btn  btn-primary">Submit</button>
+                    <button type="submit" className="btn  btn-primary">Donate</button>
                 </div>
             </form>
         </div>

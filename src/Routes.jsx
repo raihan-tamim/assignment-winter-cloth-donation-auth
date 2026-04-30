@@ -5,6 +5,7 @@ import Home from "./Pages/Home";
 import DetailsDonation from "./Pages/DetailsDonation";
 import Login from "./Pages/Login";
 import Register from "./Pages/Register";
+import PrivateRout from "./Components/PrivateRout";
 
 const router = createBrowserRouter([
     {
@@ -22,7 +23,9 @@ const router = createBrowserRouter([
             },
             {
                 path: '/:id',
-                element: <DetailsDonation></DetailsDonation>,
+                element: <PrivateRout>
+                    <DetailsDonation></DetailsDonation>
+                </PrivateRout>,
                 loader: () => fetch('/donation.json')
             },
             {

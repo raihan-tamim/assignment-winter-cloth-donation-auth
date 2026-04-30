@@ -1,9 +1,22 @@
 
+import { use } from 'react';
 import { BiSolidDonateHeart } from 'react-icons/bi';
 import { Link, NavLink } from 'react-router';
+import { AuthContext } from '../../Provider/AuthProvider';
+
 
 
 const Nav = () => {
+    const {user, logoutUser} = use(AuthContext);
+
+    const handleLogout= ()=>{
+        logoutUser().then(()=>{
+            alert('Signed out ')
+        }).catch(error=>{
+            console.log(error)
+        })
+    }
+    
     const links = <>
     <NavLink to='/' className='mr-5 font-semibold'>Home</NavLink>
     <NavLink to='/donation_campaign' className='mr-5 font-semibold'>Donation Campaign</NavLink>
@@ -31,7 +44,8 @@ const Nav = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <Link to='/login' className="btn">Login</Link>
+                {user? <button onClick={handleLogout} className='btn'>Logout</button> : <Link to='/login' className="btn">Login</Link>}
+                
             </div>
         </div>
     );
