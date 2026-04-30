@@ -4,7 +4,7 @@ import { AuthContext } from "../Provider/AuthProvider";
 
 
 const Register = () => {
-    const {createUser, googleSignIn} = use(AuthContext);
+    const {createUser, googleSignIn, updateUserProfile} = use(AuthContext);
     const navigate = useNavigate()
 
     const handleRegister=e=>{
@@ -17,7 +17,12 @@ const Register = () => {
 
         createUser(email, password)
         .then(()=>{
-            navigate('/')
+            
+            updateUserProfile({displayName: name, photoURL: photo})
+            .then(()=>{
+                navigate('/')
+            })
+            
         }).catch(error=>{
             console.log(error)
         })

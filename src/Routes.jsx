@@ -6,11 +6,14 @@ import DetailsDonation from "./Pages/DetailsDonation";
 import Login from "./Pages/Login";
 import Register from "./Pages/Register";
 import PrivateRout from "./Components/PrivateRout";
+import Dashboard from "./Pages/Dashboard";
+import ErrorPage from "./Pages/ErrorPage";
 
 const router = createBrowserRouter([
     {
         path: '/',
         element: <HomeLayout></HomeLayout>,
+        errorElement:<ErrorPage></ErrorPage>,
         children: [
             {
                 index: true,
@@ -39,6 +42,12 @@ const router = createBrowserRouter([
             }
         ]
     },
+    {
+        path:'/dashboard',
+        element: <PrivateRout>
+            <Dashboard></Dashboard>
+        </PrivateRout>
+    }
 
 
 ])

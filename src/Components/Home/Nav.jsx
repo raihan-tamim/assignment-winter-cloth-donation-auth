@@ -7,21 +7,23 @@ import { AuthContext } from '../../Provider/AuthProvider';
 
 
 const Nav = () => {
-    const {user, logoutUser} = use(AuthContext);
+    const { user, logoutUser } = use(AuthContext);
+    console.log(user)
+    const {photoURL, displayName} = user;
 
-    const handleLogout= ()=>{
-        logoutUser().then(()=>{
+    const handleLogout = () => {
+        logoutUser().then(() => {
             alert('Signed out ')
-        }).catch(error=>{
+        }).catch(error => {
             console.log(error)
         })
     }
-    
+
     const links = <>
-    <NavLink to='/' className='mr-5 font-semibold'>Home</NavLink>
-    <NavLink to='/donation_campaign' className='mr-5 font-semibold'>Donation Campaign</NavLink>
-    <NavLink to='/help' className='mr-5 font-semibold'>How to help</NavLink>
-    <NavLink to='/dashboard' className='font-semibold'>Dashboard</NavLink>
+        <NavLink to='/' className='mr-5 font-semibold'>Home</NavLink>
+        <NavLink to='/donation_campaign' className='mr-5 font-semibold'>Donation Campaign</NavLink>
+        <Link className='mr-5 font-semibold'>How to help</Link>
+        <NavLink to='/dashboard' className='font-semibold'>Dashboard</NavLink>
     </>
     return (
         <div className="navbar bg-base-100 ">
@@ -44,7 +46,15 @@ const Nav = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                {user? <button onClick={handleLogout} className='btn'>Logout</button> : <Link to='/login' className="btn">Login</Link>}
+                {user ?  
+                <div className="dropdown dropdown-end">
+                    <div tabIndex={0} role="button" className="btn m-1"><img className='w-12 h-12rounded-full' src={photoURL} alt="" /></div>
+                    <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
+                        <li><a>{displayName}</a></li>
+                        <li><button onClick={handleLogout} className='btn'>Logout</button></li>
+                    </ul>
+                </div>
+                : <Link to='/login' className="btn">Login</Link>}
                 
             </div>
         </div>
