@@ -1,6 +1,6 @@
 
 import { BiSolidDonateHeart } from 'react-icons/bi';
-import { NavLink } from 'react-router';
+import { Link, NavLink } from 'react-router';
 
 
 const Nav = () => {
@@ -23,7 +23,7 @@ const Nav = () => {
                         {links}
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl"><BiSolidDonateHeart />Humanity</a>
+                <Link to='/' className="btn btn-ghost text-xl"><BiSolidDonateHeart />Humanity</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
@@ -31,7 +31,7 @@ const Nav = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn">Login</a>
+                <Link to='/login' className="btn">Login</Link>
             </div>
         </div>
     );

@@ -15,6 +15,24 @@ const About = () => {
                     </div>
                 </div>
             </div>
+            <div className="md:flex justify-between p-5 mt-10 gap-10">
+                <div className="space-y-2 w-1/3">
+                    <h1 className='text-2xl font-bold text-blue-400 w-2/3'>12 +</h1>
+                    <p className='w-4/5'>Years of Experience</p>
+                    <hr />
+                </div>
+                <div className="space-y-2 w-1/3">
+                    <h1 className='text-2xl font-bold text-blue-400 w-2/3'>23 +</h1>
+                    <p className='w-4/5'>District networks</p>
+                    <hr />
+                </div>
+                <div className="space-y-2 w-1/3">
+                    <h1 className='text-2xl font-bold text-blue-400 w-2/3'>2.5Lakhs +</h1>
+                    <p className='w-4/5'>Cloths given to people</p>
+                    <hr />
+                </div>
+                
+            </div>
         </div>
     );
 };
