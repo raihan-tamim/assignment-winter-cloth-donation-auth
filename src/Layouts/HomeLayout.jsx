@@ -20,8 +20,8 @@ const HomeLayout = () => {
 
     return (
         <div>
-            <header className="max-w-7xl mx-auto">
-                <Nav></Nav>
+            <header className="fixed w-full top-0 z-10">
+                <Nav className=""></Nav>
             </header>
             <main className="max-w-7xl mx-auto my-2 ">
                 <section>
