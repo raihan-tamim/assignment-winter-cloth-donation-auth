@@ -1,12 +1,28 @@
 import { BiSolidDonateHeart } from "react-icons/bi";
+import { Bounce, toast } from "react-toastify";
 
 const DonateField = () => {
+    const handleSubmit = e => {
+        e.preventDefault();
+        toast.success('“ Thank you ! We will reach your destination soon”.', {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+            transition: Bounce,
+        });
+        e.target.reset();
+    }
     return (
-        <div className=""> 
+        <div className="">
             <h1 className="md:text-5xl text-2xl font-bold flex justify-center  text-blue-500">
                 <BiSolidDonateHeart /> Donate Here</h1>
-            <form className="card-body mx-auto md:w-1/2 w-2/3">
-                
+            <form onSubmit={handleSubmit} className="card-body mx-auto md:w-1/2 w-2/3">
+
                 <div className="form-control">
                     <label className="label">
                         <span className="label-text">Quantity of items</span>

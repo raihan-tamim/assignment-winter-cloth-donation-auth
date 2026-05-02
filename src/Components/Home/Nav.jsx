@@ -48,9 +48,9 @@ const Nav = () => {
             <div className="navbar-end">
                 {user ?  
                 <div className="dropdown dropdown-end">
-                    <div tabIndex={0} role="button" className="btn m-1"><img className='w-12 h-12rounded-full' src={photoURL} alt="" /></div>
+                    <div tabIndex={0} role="button" className=""><img className='w-12 h-12 rounded-full' src={photoURL} alt="" /></div>
                     <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
-                        <li><a>{displayName}</a></li>
+                        <li className='font-bold mb-2'>{displayName}</li>
                         <li><button onClick={handleLogout} className='btn'>Logout</button></li>
                     </ul>
                 </div>

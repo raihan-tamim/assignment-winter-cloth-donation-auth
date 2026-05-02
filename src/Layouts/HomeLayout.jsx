@@ -10,7 +10,7 @@ const HomeLayout = () => {
             <header className="max-w-7xl mx-auto">
                 <Nav></Nav>
             </header>
-            <main className="max-w-7xl mx-auto my-2">
+            <main className="max-w-7xl mx-auto my-2 ">
                 <section>
                     <Outlet></Outlet>
                 </section>

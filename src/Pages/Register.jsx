@@ -1,37 +1,47 @@
-import { use } from "react";
+import { use, useState } from "react";
 import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../Provider/AuthProvider";
+import { Bounce, toast } from "react-toastify";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 
 const Register = () => {
-    const {createUser, googleSignIn, updateUserProfile} = use(AuthContext);
+    const { createUser, googleSignIn, updateUserProfile } = use(AuthContext);
+    const [error, setError] = useState('');
+    const [showPassword, setShowPassword] = useState(false)
     const navigate = useNavigate()
-
-    const handleRegister=e=>{
+    
+    const handleEye = ()=>{
+        setShowPassword(!showPassword);
+    }
+    const handleRegister = e => {
         e.preventDefault();
         const name = e.target.name.value;
         const photo = e.target.photo.value;
         const email = e.target.email.value;
         const password = e.target.password.value;
-        console.log(name,photo,email,password)
+        console.log(name, photo, email, password)
 
+        const regex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+        if (!regex.test(password)) {
+            return setError('Must have an uppercase, a lowercase and minimum 6 character ');
+        }
+        setError('')
         createUser(email, password)
-        .then(()=>{
-            
-            updateUserProfile({displayName: name, photoURL: photo})
-            .then(()=>{
-                navigate('/')
+            .then(() => {
+                updateUserProfile({ displayName: name, photoURL: photo })
+                    .then(() => {
+                        navigate('/')
+                    })
+            }).catch(error => {
+                console.log(error)
             })
-            
-        }).catch(error=>{
-            console.log(error)
-        })
     }
 
-    const handleGoogleLogin=()=>{
-        googleSignIn().then(()=>{
+    const handleGoogleLogin = () => {
+        googleSignIn().then(() => {
             navigate('/')
-        }).catch(error=>{
+        }).catch(error => {
             console.log(error)
         })
     }
@@ -58,11 +68,13 @@ const Register = () => {
                     </label>
                     <input type="email" name="email" placeholder="Your email" className="input input-bordered" required />
                 </div>
-                <div className="form-control">
+                <div className="form-control relative">
                     <label className="label">
                         <span className="label-text">Password</span>
                     </label>
-                    <input type="password" name="password" placeholder="Your password" className="input input-bordered" required />
+                    <input   name="password" type={showPassword? "text" : "password"} placeholder="Your password" className="input input-bordered" required />
+                    <button onClick={handleEye} className="absolute right-5 top-12">{showPassword? <FaEyeSlash size={18} /> : <FaEye size={18} />}</button>
+                    {error && <p className="text-sm text-red-500">{error} </p>}
                     <label className="label">
                         <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                     </label>

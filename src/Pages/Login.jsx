@@ -1,29 +1,40 @@
 import { use } from "react";
 import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../Provider/AuthProvider";
+import { Bounce, toast } from "react-toastify";
 
 
-const Login = () => {   
-    const {signInUser, googleSignIn} = use(AuthContext);
+const Login = () => {
+    const { signInUser, googleSignIn } = use(AuthContext);
     const navigate = useNavigate()
 
-    const handleLogin = e=> {
+    const handleLogin = e => {
         e.preventDefault();
-        const email  = e.target.email.value;
-        const password =e.target.password.value;
+        const email = e.target.email.value;
+        const password = e.target.password.value;
         // console.log(email, password)
 
         signInUser(email, password)
-        .then(()=>{
-            navigate('/')
-        }).catch(error=>{
-            console.log(error)
-        })
+            .then(() => {
+                navigate('/')
+            }).catch(error => {
+                toast.error(error.message , {
+                    position: "top-center",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: false,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "colored",
+                    transition: Bounce,
+                });
+            })
     }
-    const handleGoogleLogin=()=>{
-        googleSignIn().then(()=>{
+    const handleGoogleLogin = () => {
+        googleSignIn().then(() => {
             navigate('/')
-        }).catch(error=>{
+        }).catch(error => {
             console.log(error)
         })
     }
