@@ -4,7 +4,20 @@ import Footer from "../Components/Footer/Footer";
 import Nav from "../Components/Home/Nav";
 
 
+import { useEffect } from "react";
+import Aos from "aos";
+
+
+
 const HomeLayout = () => {
+
+    useEffect(() => {
+        Aos.init({
+            duration: 1000,
+            once: false, // 👈 IMPORTANT (so it can trigger again on scroll)
+        });
+    }, []);
+
     return (
         <div>
             <header className="max-w-7xl mx-auto">
@@ -15,8 +28,8 @@ const HomeLayout = () => {
                     <Outlet></Outlet>
                 </section>
             </main>
-            <footer className="max-w-7xl mx-auto">
-                <Footer></Footer>
+            <footer className="max-w-7xl mx-auto" data-aos="flip-left">
+                <Footer  ></Footer>
             </footer>
         </div>
     );

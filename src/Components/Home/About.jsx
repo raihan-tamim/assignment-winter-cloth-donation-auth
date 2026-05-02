@@ -2,9 +2,9 @@
 
 const About = () => {
     return (
-        <div>
+        <div >
             <h1 className='text-3xl font-bold text-center'>About us</h1>
-            <div className='md:flex p-5 gap-8'>
+            <div className='md:flex p-5 gap-8 ' >
                 <img className='md:w-1/2  rounded-lg' src="https://img-cdn.publive.online/fit-in/1200x675/english-betterindia/media/media_files/uploads/2016/12/Kashmir-distribution-of-quilts-and-blankets-e1482925412990.jpg" alt="" />
                 <div className='flex-1 md:pl-12 md:pt-6'>
                     <div className='flex flex-col items-start justify-center '>

@@ -11,9 +11,7 @@ const Register = () => {
     const [showPassword, setShowPassword] = useState(false)
     const navigate = useNavigate()
     
-    const handleEye = ()=>{
-        setShowPassword(!showPassword);
-    }
+
     const handleRegister = e => {
         e.preventDefault();
         const name = e.target.name.value;
@@ -73,7 +71,7 @@ const Register = () => {
                         <span className="label-text">Password</span>
                     </label>
                     <input   name="password" type={showPassword? "text" : "password"} placeholder="Your password" className="input input-bordered" required />
-                    <button onClick={handleEye} className="absolute right-5 top-12">{showPassword? <FaEyeSlash size={18} /> : <FaEye size={18} />}</button>
+                    <button onClick={()=>{setShowPassword(!showPassword)}} className="absolute right-5 top-12">{showPassword? <FaEyeSlash size={18} /> : <FaEye size={18} />}</button>
                     {error && <p className="text-sm text-red-500">{error} </p>}
                     <label className="label">
                         <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
