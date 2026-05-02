@@ -9,6 +9,7 @@ import PrivateRout from "./Components/PrivateRout";
 import Dashboard from "./Pages/Dashboard";
 import ErrorPage from "./Pages/ErrorPage";
 import UpdateProfile from "./Pages/UpdateProfile";
+import ForgotPass from "./Pages/ForgotPass";
 
 const router = createBrowserRouter([
     {
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
             {
                 path: '/register',
                 element: <Register></Register>
+            },
+            {
+                path:'/forgot_pass',
+                element:<ForgotPass></ForgotPass>
             }
         ]
     },
